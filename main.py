@@ -11,7 +11,9 @@ def unitime():
 	soup = BeautifulSoup(response.content, "html.parser")
 	utime = soup.find_all("h3", class_="text-danger")
 
-	return utime[0].getText()
+	utime = utime[0].getText()
+
+	return utime[:10]
 
 app = Flask(__name__)
 
